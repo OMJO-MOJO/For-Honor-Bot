@@ -1,0 +1,20 @@
+{
+   "name": "for-honor-bot",
+   "version": "1.0.0",
+   "description": "This is a Discord bot that manages our For Honor Discord Server",
+   "main": "src/index.ts",
+   "scripts": {
+      "dev": "nodemon",
+      "start": "npm run build && node dist/index.js",
+      "build": "tsc --outDir dist --rootDir src --skipLibCheck && npm run copy-files",
+      "copy-files": "copyfiles -u 1 src/**/*.ttf src/**/*.png src/**/*.psd dist/"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+      "chalk-advanced": "^1.0.7",
+      "discord.js": "^14.14.1",
+      "wokcommands": "^2.1.9"
+   }
+}
