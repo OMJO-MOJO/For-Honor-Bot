@@ -138,6 +138,17 @@ export default async (
             continue;
          }
 
+         if (member.presence.activities[0]?.name === "Custom Status") {
+            member.presence.activities.shift();
+         }
+
+         // Check if the user is playing something
+         if (!member.presence.activities.length) {
+            continue;
+         }
+
+         console.log(member.presence.activities);
+
          // Record the current count
          activities.set(
             member.presence.activities[0].name,
