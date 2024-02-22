@@ -11,6 +11,8 @@ import ForHonorBot from "./utils/ForHonorBot";
 
 // Create the discord client
 const client = new ForHonorBot();
+
+// Run the bot
 client.loginBot().then(() => {
    console.log(
       `${blue("For Honor Bot")} ${gray(">")} ${white(

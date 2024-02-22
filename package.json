@@ -13,8 +13,10 @@
    "author": "",
    "license": "ISC",
    "dependencies": {
+      "canvas": "^2.11.2",
       "chalk-advanced": "^1.0.7",
       "discord.js": "^14.14.1",
-      "wokcommands": "^2.1.9"
+      "dotenv": "^16.4.5",
+      "mongoose": "^8.1.3"
    }
 }

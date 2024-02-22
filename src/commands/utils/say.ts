@@ -1,15 +1,16 @@
 import { EmbedBuilder } from "discord.js";
-import { CommandObject, CommandType } from "wokcommands";
+import { CommandObject, CommandUsage } from "../../typings";
 
 export default {
    description: "Make the bot say something",
 
-   type: CommandType.LEGACY,
+   type: "LEGACY",
+   ownerOnly: true,
 
    minArgs: 1,
 
    // Invoked when a user runs the command
-   callback: ({ message, args }) => {
+   callback: ({ message, args }: CommandUsage) => {
       message?.delete();
 
       const embed = new EmbedBuilder()
