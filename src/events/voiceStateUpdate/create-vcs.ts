@@ -99,9 +99,10 @@ export default async (
 
    // Check if the user has joined one of the created voice channels
    if (
-      // type === VoiceTypes.JOIN &&
-      oldVoiceState.channel?.parentId === config.voice_category_id ||
-      newVoiceState.channel?.parentId === config.voice_category_id
+      (oldVoiceState.channelId === config.create_vc_channel_id ||
+         newVoiceState.channelId === config.create_vc_channel_id) &&
+      (oldVoiceState.channel?.parentId === config.voice_category_id ||
+         newVoiceState.channel?.parentId === config.voice_category_id)
    ) {
       // Get the voice state
       let voiceState: VoiceState;
@@ -146,8 +147,6 @@ export default async (
          if (!member.presence.activities.length) {
             continue;
          }
-
-         console.log(member.presence.activities);
 
          // Record the current count
          activities.set(
